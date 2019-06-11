@@ -15,10 +15,10 @@
         function update(event){
             let ball = document.getElementById("balloon");
             let size = parseInt(ball.style.fontSize);
-            console.log(size)
+
             if (event.key =="ArrowUp"){
                 size += size * .1;
-                console.log(size);
+
             } else if(event.key=="ArrowDown"){
                 size -= size * .1;
             }

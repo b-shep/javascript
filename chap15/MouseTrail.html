@@ -5,29 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+
 </head>
 <body>
-    <div id="square" style="height: 20px; width: 20px; background-color: blue; position: absolute"></div>
+    <style>
+        .square{
+            height:20px;
+            width:20px;
+            position: absolute;
+            background-color: rgb(138, 65, 65)
+
+        }
+    </style>
+    
     <script>
-        let tile = document.getElementById("square");
-        let doc = document.body;
-        let hor = window.innerWidth/20;
-        let vert = window.innerHeight/20;
-        let cloneList = []
-        for (let i = 0; i < hor; i++){
-            let clone = tile.cloneNode(false);
-            clone.height=20;
-            clone.width=20;
-            clone.backgroundColor=red;
-           for (let j = 0; j < vert; j++){
-                let clone2 = tile.cloneNode(false);
-                clone2.class = "col";
-                clone.appendChild(clone2);
-            
-            
-           }
-           doc.appendChild(clone);
-       }
+        window.addEventListener("mousemove", event => {
+            let dot = document.createElement("div");
+            dot.className = "square";
+            let backgroundHue = getColor(event.clientX, event.clientY);
+            dot.style.backgroundColor = backgroundHue;
+            dot.style.left = (event.clientX-4) + "px";
+            dot.style.top = (event.clientY - 4) + "px";
+            document.body.appendChild(dot);
+        })
+
+        function getColor(x,y){
+            let color1 = Math.floor(x*255/window.innerWidth);
+            let color2 = Math.floor(y*255/window.innerHeight);
+            return "rgb(" + 50 + "," + color1 + "," +  color2 + ")";
+        }
+        
     </script>
+
 </body>
 </html>
