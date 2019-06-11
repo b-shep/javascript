@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p id="balloon" style = "font-size: 16px; text-align: center">🎈</p>
+
+    <script>
+        window.addEventListener("keydown", event => update(event));
+
+        function update(event){
+            let ball = document.getElementById("balloon");
+            let size = parseInt(ball.style.fontSize);
+            console.log(size)
+            if (event.key =="ArrowUp"){
+                size += size * .1;
+                console.log(size);
+            } else if(event.key=="ArrowDown"){
+                size -= size * .1;
+            }
+            if (size > 50){
+                ball.style.fontSize = size + "px";
+                explode();
+            } else{
+                ball.style.fontSize = size + "px";
+            }
+        }
+
+        function explode(){
+            document.getElementById("balloon").innerHTML = "💥";
+            document.getElementById("balloon").removeEventListener("keydown", event => update(event));
+            
+        }
+
+    </script>
+</body>
+</html>

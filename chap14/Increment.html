@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="update()">-</button>
+    <input id="increment" value="0" type="text" readonly>
+    <button onclick="update(true)">+</button>
+
+    <script>
+        function update(plus){
+            let increment = document.getElementById("increment");
+            let current = Number(increment.value);
+            if (plus){
+                current++;
+            }else{
+                current--;
+            }
+            increment.value = current;
+            numberCheck(current);
+        }
+        
+        function numberCheck(current){
+            let increment = document.getElementById("increment");
+            let fontStr = "";
+            if (current % 2 == 0){
+                fontStr += "color: red; ";
+            }
+            if (current % 3 == 0){
+                fontStr += "font-style: italic; ";
+            }
+            if (current % 7 == 0){
+                fontStr += "font-weight: bold; "
+            }
+            increment.style = fontStr;
+        }
+
+    </script>
+</body>
+</html>

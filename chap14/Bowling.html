@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bowlin App</title>
+</head>
+<body>
+    <p>Let's Bowl!</p>
+    <button onclick="bowl()">Bowl</button>
+    <table border="1">
+        <tr>
+            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td>
+        </tr>
+        <tr>
+            <td class="frame"> </td>
+            <td class="frame"> </td>
+            <td class="frame"> </td>
+            <td class="frame"> </td>
+            <td class="frame"> </td>
+            <td class="frame"> </td>
+            <td class="frame"> </td>
+            <td class="frame"> </td>
+            <td class="frame"> </td>
+            <td class="frame"> </td>
+            
+        </tr>
+    </table>
+
+    <input type="text" id="total" readonly>
+
+    <script>
+            function bowl(){
+                let frames =document.getElementsByClassName("frame");
+                let total =0;
+                for (let i = 0; i < frames.length; i++){
+                    let frame = frames[i];
+                    let rand = generateRand();
+                    frame.textContent=rand;
+                    total += rand;
+                };
+                console.log("total is " + total)
+                let totalBox = document.getElementById("total");
+                totalBox.value=total;
+                
+            };
+        let counter = 0;
+        function generateRand(){
+            counter++;
+            let rand = Math.floor((Math.random() * 11));
+            return rand; 
+        }
+        </script>
+</body>
+</html>

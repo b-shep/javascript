@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="square" style="height: 20px; width: 20px; background-color: blue; position: absolute"></div>
+    <script>
+        let tile = document.getElementById("square");
+        let doc = document.body;
+        let hor = window.innerWidth/20;
+        let vert = window.innerHeight/20;
+        let cloneList = []
+        for (let i = 0; i < hor; i++){
+            let clone = tile.cloneNode(false);
+            clone.height=20;
+            clone.width=20;
+            clone.backgroundColor=red;
+           for (let j = 0; j < vert; j++){
+                let clone2 = tile.cloneNode(false);
+                clone2.class = "col";
+                clone.appendChild(clone2);
+            
+            
+           }
+           doc.appendChild(clone);
+       }
+    </script>
+</body>
+</html>

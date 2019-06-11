@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOMpractice-get A tags</title>
+</head>
+<body>
+    <h1>Some links</h1>
+    <a href="https://www.npmjs.com/package/readline-sync">how to get input from console in node</a><br>
+    <a href="https://crimethinc.com/">think</a><br>
+    <a href="https://www.cameronsworld.net/">cool gif alert</a><br>
+    <script type="text/javascript">
+        let links = document.body.getElementsByTagName("a");
+        for(let l of links){
+            console.log(l);
+        }
+        for(let i =0; i < links.length; i++){
+            console.log(links[i].href);
+        }
+        console.log(link.href);
+    </script>
+    
+</body>
+</html>

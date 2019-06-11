@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function friday(){
+            let para = document.getElementById("rep");
+            let replace = document.createTextNode("I love Fridays!");
+            para.parentNode.replaceChild(replace, para);
+        }
+    </script>
+</head>
+<body>
+    <p id="rep">Put somthing here</p>
+    <button onclick="friday()">Replace</button>
+</body>
+</html>

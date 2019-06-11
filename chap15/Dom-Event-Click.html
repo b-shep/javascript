@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="button2">Click me</button>
+    <p>No handler here.</p>
+    <button id="button">Click me any way you want</button>
+<script>
+  let button1 = document.getElementById("button");
+  button1.addEventListener("mousedown", event => {
+    if (event.button == 0) {
+      console.log("Left button");
+    } else if (event.button == 1) {
+      console.log("Middle button");
+    } else if (event.button == 2) {
+      console.log("Right button");
+    }
+  });
+    let button2 = document.getElementById("button2")
+    button2.addEventListener("click", () => {
+    console.log("Button clicked.");
+    });
+</script>
+</body>
+</html>
